@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Softwares.work | Websites and software, built to work</title>
-<meta name="description" content="Softwares.work designs and builds websites and custom software. Static sites from $100, database-driven sites from $500, custom software from $700.">
+<meta name="description" content="Softwares.work designs and builds websites and custom software. Static sites from $180, database-driven sites from $350, custom software from $600.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233d5afe'/%3E%3Cpath d='M26 20 14 32l12 12M38 20l12 12-12 12' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@ document.documentElement.setAttribute('data-theme',t)})();
 :root{
   --bg:#f6f6fb;--hero:#ececf4;--surface:#ffffff;--text:#1d1e24;--muted:#5a5c6a;--line:#d9d9e4;
   --accent:#3d5afe;--accent-text:#ffffff;--btn:#1d1e24;--btn-text:#ffffff;--deep:#25262d;--deep-text:#f2f2f6;--deep-muted:#a6a8b6;--deep-line:#3b3c47;
-  --red:#f43a3a;--shadow:0 1px 2px rgba(20,20,40,.06);
+  --red:#f43a3a;--wa:#1fa855;--shadow:0 1px 2px rgba(20,20,40,.06);
   --display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;
   --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
 }
@@ -37,6 +37,8 @@ img,svg{max-width:100%;display:block}
 .btn:hover{opacity:.88}.btn:active{transform:translateY(1px)}
 .btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--text)}
 .btn.accent{background:var(--accent);color:var(--accent-text)}
+.btn.wa{background:var(--wa);color:#fff}
+.btn[disabled]{opacity:.6;cursor:wait}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -64,7 +66,6 @@ h1{font:800 clamp(64px,10.5vw,148px)/.84 var(--display);letter-spacing:-.01em;te
 .blocks{position:absolute;right:0;top:0;width:min(40vw,520px);height:100%;pointer-events:none}
 .blocks i{position:absolute;display:block}
 .b1{right:0;top:0;width:28%;height:62%;background:linear-gradient(#f43a3a,#f9a1a1)}
-.b2{right:0;top:44%;width:100%;height:18%;background:linear-gradient(90deg,#f9a1a1,#f9b4b4);display:none}
 .b3{right:28%;top:62%;width:28%;height:38%;background:#f9b4b4}
 .b4{right:56%;top:62%;width:44%;height:17%;background:linear-gradient(90deg,#a98ed6,#f9b4b4)}
 .b5{right:0;top:44%;width:56%;height:18%;background:linear-gradient(90deg,#f9a1a1,#f9b4b4)}
@@ -94,11 +95,35 @@ h3{font:600 21px/1.3 var(--body);margin-bottom:10px}
 .price sup{font-size:34px;vertical-align:top;position:relative;top:8px;margin-right:2px}
 .price small{font:500 15px var(--body);color:var(--muted);margin-left:6px}
 .plan>p{color:var(--muted);margin-bottom:22px}
-.plan ul{list-style:none;border-top:1px solid var(--line);margin-bottom:30px;flex:1}
+.plan ul{list-style:none;border-top:1px solid var(--line);margin-bottom:26px}
+.plan ul.examples{flex:1;margin-bottom:30px}
+.plan .plain{color:var(--text);font-size:15px;font-weight:500;margin:0 0 14px}
+.plan .why{background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:24px;font-size:15px;color:var(--muted)}
+.plan .why b{display:block;color:var(--text);font-size:14px;margin-bottom:4px}
+.plan h4{font:600 13px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.plan ul.examples li::before{background:var(--accent)}
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:36px;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.guide div{padding:22px 24px}
+.guide div+div{border-left:1px solid var(--line)}
+.guide strong{display:block;font-size:16px;margin-bottom:4px}
+.guide span{color:var(--muted);font-size:15px}
+.pricing-why{max-width:760px;margin:0 0 28px;color:var(--muted);font-size:17px}
+.pricing-why b{color:var(--text)}
 .plan li{padding:13px 0 13px 24px;border-bottom:1px solid var(--line);position:relative;font-size:16px}
 .plan li::before{content:"";position:absolute;left:0;top:21px;width:9px;height:9px;background:var(--text)}
 .plan .btn{width:100%}
 .note{margin-top:24px;color:var(--muted);font-size:15px}
+
+/* proof of work */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.work-card{display:flex;align-items:center;gap:20px;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.work-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.work-ico{flex:none;width:56px;height:56px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font:800 28px/1 var(--display);text-transform:uppercase}
+.work-info{flex:1;min-width:0}
+.work-info strong{display:block;font:600 19px/1.3 var(--body);overflow-wrap:anywhere}
+.work-info span{color:var(--muted);font-size:15px;overflow-wrap:anywhere}
+.work-arrow{flex:none;width:22px;height:22px;color:var(--muted)}
+.work-card:hover .work-arrow{color:var(--accent)}
 
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid var(--line)}
@@ -107,7 +132,7 @@ h3{font:600 21px/1.3 var(--body);margin-bottom:10px}
 .step h3::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--text);color:var(--bg);font-size:15px;margin-right:12px;vertical-align:2px}
 .step p{color:var(--muted);font-size:16px}
 
-/* about (always dark band, like the template) */
+/* about */
 .about{background:var(--deep);color:var(--deep-text);position:relative;overflow:hidden}
 .about .wrap{position:relative}
 .tiles{position:absolute;right:0;top:-40px;display:grid;grid-template-columns:repeat(10,48px);gap:10px;opacity:.95}
@@ -131,8 +156,16 @@ form{display:grid;gap:16px}
 label{font-size:15px;font-weight:600;display:grid;gap:7px}
 input,select,textarea{font:400 16px var(--body);padding:14px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);width:100%}
 textarea{min-height:140px;resize:vertical}
-.direct{margin-top:34px;display:grid;gap:6px;color:var(--muted)}
-.direct a{color:var(--text);font-weight:600}
+.direct{margin-top:34px;display:grid;gap:18px;color:var(--muted)}
+.direct div{display:grid;gap:2px}
+.direct a{color:var(--text);font-weight:600;overflow-wrap:anywhere}
+.method{display:grid;gap:8px}
+.method>span{font-size:15px;font-weight:600}
+.method-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.method-opts button{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--text);font:600 16px var(--body);cursor:pointer;transition:border-color .15s,background .15s}
+.method-opts button svg{width:20px;height:20px}
+.method-opts button[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.method-opts button[data-m="wa"][aria-pressed="true"]{border-color:var(--wa);background:color-mix(in srgb,var(--wa) 12%,var(--surface))}
 
 /* footer */
 footer{background:var(--deep);color:var(--deep-text);padding:0 0 36px}
@@ -157,14 +190,15 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
 #cookie .row{display:flex;gap:10px}
 #cookie button{font:500 16px var(--body);padding:12px 20px;border-radius:8px;border:0;cursor:pointer;background:#fff;color:#1d1e24}
 #cookie button.ok{background:#3d5afe;color:#fff}
-#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:12px 20px;border-radius:10px;font-size:15px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:120}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:12px 20px;border-radius:10px;font-size:15px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:120;max-width:calc(100% - 32px);text-align:center}
 #toast.show{opacity:1}
 
 /* responsive */
 @media (max-width:1000px){
   .hero .wrap{grid-template-columns:1fr;min-height:0;padding-block:56px}
   .blocks{width:42vw;opacity:.45}
-  .services,.plans{grid-template-columns:1fr}
+  .services,.plans,.work-grid,.guide{grid-template-columns:1fr}
+  .guide div+div{border-left:0;border-top:1px solid var(--line)}
   .service,.service+.service{padding:30px 0;border-right:0;border-bottom:1px solid var(--line)}
   .steps{grid-template-columns:1fr 1fr}
   .step,.step+.step{padding:28px 20px 28px 0;border-left:0}
@@ -190,6 +224,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
   .step,.step+.step{border-bottom:1px solid var(--line);padding:26px 0}
   .foot{grid-template-columns:1fr}.sub{flex-direction:column}
   .hero-copy p{font-size:18px}.price{font-size:64px}
+  .work-card{padding:20px}
   #cookie{padding:16px 18px}#cookie .row{width:100%}#cookie button{flex:1}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -205,6 +240,9 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       <path d="M20 15 11 24l9 9M28 15l9 9-9 9" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
       <rect x="35" y="33.5" width="5" height="5" rx="1" fill="#ff4d6a"/>
     </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 7 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.36A9.9 9.9 0 1 0 12.04 2Zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.08.8.82-3-.2-.31a8.1 8.1 0 1 1 7.01 3.85Zm4.45-6.07c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.1 3.64.57.25 1.02.4 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
 
@@ -218,6 +256,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#work">Our work</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -285,11 +324,20 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       <h2>Simple pricing</h2>
       <p class="lede">Clear starting prices in US dollars. Every project begins with a short call and a written scope.</p>
     </div>
+    <p class="pricing-why"><b>How we set our prices:</b> the price depends on how much work and risk is inside the project. A page that only shows information is quick to build. A site that stores customer data, takes payments or has logins needs far more building, testing and security, so it costs more. You always get a fixed price in writing before we start, so there are no hourly surprises.</p>
+    <div class="guide">
+      <div><strong>Just need people to see information?</strong><span>Choose Static website.</span></div>
+      <div><strong>Need people to log in, order or book?</strong><span>Choose Website with database.</span></div>
+      <div><strong>Need a tool to run your business?</strong><span>Choose Custom software.</span></div>
+    </div>
     <div class="plans">
       <article class="plan">
-        <span class="tag">For small businesses and personal sites</span>
-        <div class="price"><sup>$</sup>100<small>from</small></div>
+        <span class="tag">For established businesses that need a professional online presence</span>
+        <div class="price"><sup>$</sup>180<small>from</small></div>
         <p>Static website</p>
+        <p class="plain">Think of it as a digital brochure. Visitors read it, look at photos and contact you.</p>
+        <div class="why"><b>Why this price</b>Every page is fixed, with no customer accounts and no database to build or secure. That makes it the fastest to deliver and nothing needs monthly upkeep, so it is our lowest price.</div>
+        <h4>What you get</h4>
         <ul>
           <li>Up to 5 pages</li>
           <li>Responsive on every device</li>
@@ -297,12 +345,17 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
           <li>Contact form and basic SEO</li>
           <li>Deployment to your domain</li>
         </ul>
-        <a class="btn ghost" href="#contact" data-plan="Static website - from $100">Choose static</a>
+        <h4>Good for, for example</h4>
+        <ul class="examples"><li>A law or accounting firm that needs to look trustworthy to new clients</li><li>A private clinic or dental practice showing services, doctors and location</li><li>A hotel, lodge or safari company turning visitors into enquiries</li><li>A construction or engineering contractor showcasing completed projects</li><li>A real estate developer presenting new projects to buyers and investors</li></ul>
+        <a class="btn ghost" href="#contact" data-plan="Static website - from $180">Choose static</a>
       </article>
       <article class="plan featured">
         <span class="tag">Most requested</span>
-        <div class="price"><sup>$</sup>500<small>from</small></div>
+        <div class="price"><sup>$</sup>350<small>from</small></div>
         <p>Website with database</p>
+        <p class="plain">Think of it as an online shop with a back office. The site remembers customers, orders and bookings.</p>
+        <div class="why"><b>Why this price</b>A database means we design how information is stored, build secure logins and an admin dashboard, connect payments and email, and set up backups. That is several times more work and responsibility than a brochure site.</div>
+        <h4>What you get</h4>
         <ul>
           <li>User accounts and login</li>
           <li>Database design and setup</li>
@@ -310,12 +363,17 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
           <li>Payments and email integrations</li>
           <li>Security hardening and backups</li>
         </ul>
-        <a class="btn accent" href="#contact" data-plan="Website with database - from $500">Choose database site</a>
+        <h4>Good for, for example</h4>
+        <ul class="examples"><li>An online clothing or electronics store taking orders</li><li>A clinic, salon or gym where clients book appointments</li><li>A tutoring centre with student and parent logins</li><li>A property agency where agents add and edit listings</li><li>A food business with online ordering and an admin panel</li></ul>
+        <a class="btn accent" href="#contact" data-plan="Website with database - from $350">Choose database site</a>
       </article>
       <article class="plan">
         <span class="tag">For complex products and tools</span>
-        <div class="price"><sup>$</sup>700<small>from</small></div>
+        <div class="price"><sup>$</sup>600<small>from</small></div>
         <p>Custom software</p>
+        <p class="plain">Think of it as a tool made to measure for your business, instead of one that nearly fits.</p>
+        <div class="why"><b>Why this price</b>Nothing is reused from a template. We study how you work, build it from scratch, test it, document it and support it for 30 days after launch. The price covers that full engineering effort.</div>
+        <h4>What you get</h4>
         <ul>
           <li>Custom web or desktop applications</li>
           <li>APIs and third-party integrations</li>
@@ -323,14 +381,47 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
           <li>Documentation and handover</li>
           <li>30 days of post-launch support</li>
         </ul>
-        <a class="btn ghost" href="#contact" data-plan="Custom software - from $700">Choose software</a>
+        <h4>Good for, for example</h4>
+        <ul class="examples"><li>Stock and sales tracking for a shop or wholesaler</li><li>A school system for student records and fee payments</li><li>An invoicing and receipts app for a small business</li><li>A dispatch tool for a delivery or transport company</li><li>Automation that moves orders from email or forms into a spreadsheet</li></ul>
+        <a class="btn ghost" href="#contact" data-plan="Custom software - from $600">Choose software</a>
       </article>
     </div>
     <p class="note">Prices are starting points. Larger scopes are quoted after we review your requirements, and you approve the final price before any work begins.</p>
   </div>
 </section>
 
-<section id="process">
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Proof of work</h2>
+      <p class="lede">Live sites we have built. Click any of them to open it and see the work for yourself.</p>
+    </div>
+    <div class="work-grid">
+      <a class="work-card" href="https://spydershopper.work.gd" target="_blank" rel="noopener noreferrer">
+        <div class="work-ico" aria-hidden="true">S</div>
+        <div class="work-info"><strong>Spyder Shopper</strong><span>spydershopper.work.gd</span></div>
+        <svg class="work-arrow" aria-hidden="true"><use href="#i-ext"/></svg>
+      </a>
+      <a class="work-card" href="https://beats.work.gd" target="_blank" rel="noopener noreferrer">
+        <div class="work-ico" aria-hidden="true">B</div>
+        <div class="work-info"><strong>Beats</strong><span>beats.work.gd</span></div>
+        <svg class="work-arrow" aria-hidden="true"><use href="#i-ext"/></svg>
+      </a>
+      <a class="work-card" href="https://rextonlink.work.gd" target="_blank" rel="noopener noreferrer">
+        <div class="work-ico" aria-hidden="true">R</div>
+        <div class="work-info"><strong>Rexton Link</strong><span>rextonlink.work.gd</span></div>
+        <svg class="work-arrow" aria-hidden="true"><use href="#i-ext"/></svg>
+      </a>
+      <a class="work-card" href="https://ant1l0cker.github.io/NaxsIT/" target="_blank" rel="noopener noreferrer">
+        <div class="work-ico" aria-hidden="true">N</div>
+        <div class="work-info"><strong>Nax IT</strong><span>ant1l0cker.github.io/NaxsIT</span></div>
+        <svg class="work-arrow" aria-hidden="true"><use href="#i-ext"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="process" style="background:var(--bg);border-block:0">
   <div class="wrap">
     <div class="section-head">
       <h2>How we work</h2>
@@ -371,25 +462,38 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap">
     <div>
       <h2>Start a project</h2>
-      <p class="lede">Tell us what you need. We reply within one business day with questions, a timeline and a price.</p>
+      <p class="lede">Tell us what you need and choose how to send it: by email or straight to our WhatsApp. We reply within one business day with questions, a timeline and a price.</p>
       <div class="direct">
-        <span>Email</span>
-        <a href="mailto:hello@softwares.work">hello@softwares.work</a>
+        <div>
+          <span>Email</span>
+          <a href="mailto:softwares.work.mail@gmail.com">softwares.work.mail@gmail.com</a>
+        </div>
+        <div>
+          <span>WhatsApp</span>
+          <a href="https://wa.me/254712942997" target="_blank" rel="noopener noreferrer">0712 942 997</a>
+        </div>
       </div>
     </div>
     <form id="form" novalidate>
+      <div class="method">
+        <span id="method-label">Send my request via</span>
+        <div class="method-opts" role="group" aria-labelledby="method-label">
+          <button type="button" data-m="email" aria-pressed="true"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</button>
+          <button type="button" data-m="wa" aria-pressed="false"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button>
+        </div>
+      </div>
       <label>Your name<input name="name" autocomplete="name" required></label>
       <label>Email address<input name="email" type="email" autocomplete="email" required></label>
       <label>Project type
         <select name="type" id="type">
-          <option>Static website - from $100</option>
-          <option>Website with database - from $500</option>
-          <option>Custom software - from $700</option>
+          <option>Static website - from $180</option>
+          <option>Website with database - from $350</option>
+          <option>Custom software - from $600</option>
           <option>Not sure yet</option>
         </select>
       </label>
       <label>Project details<textarea name="msg" required></textarea></label>
-      <button class="btn" type="submit">Send request</button>
+      <button class="btn" id="send" type="submit"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg><span>Send by email</span></button>
     </form>
   </div>
 </section>
@@ -408,7 +512,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       </div>
       <div>
         <h4>Company</h4>
-        <ul><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul>
+        <ul><li><a href="#about">About</a></li><li><a href="#work">Our work</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul>
       </div>
       <div>
         <h4>Services</h4>
@@ -439,9 +543,10 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
 <script>
 (function(){
   var root=document.documentElement,$=function(s){return document.querySelector(s)};
+  var EMAIL='softwares.work.mail@gmail.com',WA='254712942997';
   function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
   function read(k){try{return localStorage.getItem(k)}catch(e){return null}}
-  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3200)}
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('show')},3600)}
 
   $('#theme').addEventListener('click',function(){
     var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
@@ -465,14 +570,44 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
   document.querySelectorAll('[data-plan]').forEach(function(a){
     a.addEventListener('click',function(){$('#type').value=a.getAttribute('data-plan')})});
 
-  /* contact form: opens the visitor's email client addressed to the studio */
+  /* send method: email or WhatsApp */
+  var method='email',send=$('#send');
+  function setMethod(m){
+    method=m;
+    document.querySelectorAll('.method-opts button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-m')===m)});
+    send.classList.toggle('wa',m==='wa');
+    send.querySelector('use').setAttribute('href',m==='wa'?'#i-wa':'#i-mail');
+    send.querySelector('span').textContent=m==='wa'?'Send on WhatsApp':'Send by email';
+  }
+  document.querySelectorAll('.method-opts button').forEach(function(b){
+    b.addEventListener('click',function(){setMethod(b.getAttribute('data-m'))})});
+
   $('#form').addEventListener('submit',function(e){
     e.preventDefault();var f=e.target,ok=true;
     ['name','email','msg'].forEach(function(n){var el=f.elements[n];if(!el.value.trim()||(n==='email'&&!/^\S+@\S+\.\S+$/.test(el.value))){el.style.borderColor='#f43a3a';ok=false}else el.style.borderColor=''});
     if(!ok){toast('Please complete the highlighted fields.');return}
-    var body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nProject: '+f.type.value+'\n\n'+f.msg.value;
-    window.location.href='mailto:hello@softwares.work?subject='+encodeURIComponent('New project request')+'&body='+encodeURIComponent(body);
-    toast('Opening your email app to send the request.');
+    var d={name:f.name.value.trim(),email:f.email.value.trim(),type:f.type.value,msg:f.msg.value.trim()};
+
+    if(method==='wa'){
+      var text='Hello Softwares.work, I would like to start a project.\n\nName: '+d.name+'\nEmail: '+d.email+'\nProject: '+d.type+'\n\nDetails: '+d.msg;
+      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener');
+      toast('Opening WhatsApp with your request ready to send.');
+      return;
+    }
+
+    /* email: delivered straight to our inbox, no email app needed */
+    var label=send.querySelector('span'),old=label.textContent;
+    send.disabled=true;label.textContent='Sending...';
+    fetch('https://formsubmit.co/ajax/'+EMAIL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({_subject:'New project request from '+d.name,_template:'table',_replyto:d.email,Name:d.name,Email:d.email,Project:d.type,Details:d.msg})
+    }).then(function(r){return r.json()}).then(function(j){
+      if(j&&(j.success===true||j.success==='true')){f.reset();toast('Request sent. We will reply within one business day.')}
+      else throw new Error('fail');
+    }).catch(function(){
+      toast('Could not send right now. Please try WhatsApp or email us directly.');
+    }).then(function(){send.disabled=false;label.textContent=old});
   });
 
   $('#sub').addEventListener('submit',function(e){
