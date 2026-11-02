@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Softwares.work | Websites and software, built to work</title>
-<meta name="description" content="Softwares.work designs and builds websites and custom software. Static sites from $180, database-driven sites from $350, custom software from $600.">
+<meta name="description" content="Softwares.work designs and builds websites and custom software. Static sites from $180, database-driven sites from $350, custom software from $600. 50% deposit, 50% after the work.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233d5afe'/%3E%3Cpath d='M26 20 14 32l12 12M38 20l12 12-12 12' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +114,17 @@ h3{font:600 21px/1.3 var(--body);margin-bottom:10px}
 .plan .btn{width:100%}
 .note{margin-top:24px;color:var(--muted);font-size:15px}
 
+/* payment terms */
+.pay{margin-top:36px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:32px;box-shadow:var(--shadow)}
+.pay h3{font:800 clamp(30px,4vw,44px)/1 var(--display);text-transform:uppercase;margin-bottom:10px}
+.pay p{color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.split div{padding:22px;border:1px solid var(--line);border-radius:10px}
+.split div:first-child{border:2px solid var(--accent)}
+.split b{display:block;font:800 56px/1 var(--display);color:var(--accent)}
+.split strong{display:block;margin:6px 0 4px}
+.split span{color:var(--muted);font-size:15px}
+
 /* proof of work */
 .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .work-card{display:flex;align-items:center;gap:20px;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
@@ -197,7 +208,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
 @media (max-width:1000px){
   .hero .wrap{grid-template-columns:1fr;min-height:0;padding-block:56px}
   .blocks{width:42vw;opacity:.45}
-  .services,.plans,.work-grid,.guide{grid-template-columns:1fr}
+  .services,.plans,.work-grid,.guide,.pay{grid-template-columns:1fr}
   .guide div+div{border-left:0;border-top:1px solid var(--line)}
   .service,.service+.service{padding:30px 0;border-right:0;border-bottom:1px solid var(--line)}
   .steps{grid-template-columns:1fr 1fr}
@@ -224,7 +235,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
   .step,.step+.step{border-bottom:1px solid var(--line);padding:26px 0}
   .foot{grid-template-columns:1fr}.sub{flex-direction:column}
   .hero-copy p{font-size:18px}.price{font-size:64px}
-  .work-card{padding:20px}
+  .work-card{padding:20px}.split{grid-template-columns:1fr}
   #cookie{padding:16px 18px}#cookie .row{width:100%}#cookie button{flex:1}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -386,7 +397,18 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
         <a class="btn ghost" href="#contact" data-plan="Custom software - from $600">Choose software</a>
       </article>
     </div>
-    <p class="note">Prices are starting points. Larger scopes are quoted after we review your requirements, and you approve the final price before any work begins.</p>
+
+    <div class="pay" id="payment">
+      <div>
+        <h3>How payment works</h3>
+        <p>You pay half to start the work, and the other half only once the work is done.</p>
+      </div>
+      <div class="split">
+        <div><b>50%</b><strong>Deposit to begin</strong><span>Paid after you approve the written scope and price. It starts the work.</span></div>
+        <div><b>50%</b><strong>Balance after the work</strong><span>Paid once the work is finished and delivered.</span></div>
+      </div>
+    </div>
+    <p class="note">Prices are starting points. Larger scopes are quoted after we review your requirements, and you approve the final price before any work begins. A 50% deposit is required to start every project, with the remaining 50% due after the work is completed.</p>
   </div>
 </section>
 
@@ -428,10 +450,10 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       <p class="lede">A short, predictable process with no surprises.</p>
     </div>
     <div class="steps">
-      <div class="step"><h3>Scope</h3><p>We talk through your goals and agree on features, timeline and a fixed price in writing.</p></div>
+      <div class="step"><h3>Scope</h3><p>We talk through your goals and agree on features, timeline and a fixed price in writing. A 50% deposit starts the work.</p></div>
       <div class="step"><h3>Design</h3><p>You review layouts and flows before development starts, so changes are cheap and early.</p></div>
       <div class="step"><h3>Build</h3><p>We develop in stages and share working previews so you can see progress as it happens.</p></div>
-      <div class="step"><h3>Launch</h3><p>We test, deploy, hand over the code and stay available to fix anything that comes up.</p></div>
+      <div class="step"><h3>Launch</h3><p>We test and finish the work, you pay the remaining 50%, then we deploy, hand over the code and stay available to fix anything that comes up.</p></div>
     </div>
   </div>
 </section>
@@ -450,6 +472,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
         <ul class="facts">
           <li>100% code ownership <span>Source handed over</span></li>
           <li>Fixed price quotes <span>No hourly surprises</span></li>
+          <li>Fair payment <span>50% deposit, 50% after work</span></li>
           <li>Mobile first <span>Every project</span></li>
           <li>Direct communication <span>No account managers</span></li>
         </ul>
@@ -462,7 +485,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap">
     <div>
       <h2>Start a project</h2>
-      <p class="lede">Tell us what you need and choose how to send it: by email or straight to our WhatsApp. We reply within one business day with questions, a timeline and a price.</p>
+      <p class="lede">Tell us what you need and choose how to send it: by email or straight to our WhatsApp. We reply within one business day with questions, a timeline and a price. Projects start once the 50% deposit is paid.</p>
       <div class="direct">
         <div>
           <span>Email</span>
@@ -516,7 +539,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
       </div>
       <div>
         <h4>Services</h4>
-        <ul><li><a href="#services">Static sites</a></li><li><a href="#services">Database sites</a></li><li><a href="#services">Custom software</a></li><li><a href="#pricing">Pricing</a></li></ul>
+        <ul><li><a href="#services">Static sites</a></li><li><a href="#services">Database sites</a></li><li><a href="#services">Custom software</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#payment">Payment terms</a></li></ul>
       </div>
       <div>
         <h4>Get project updates</h4>
@@ -589,7 +612,7 @@ footer a{color:var(--deep-muted);text-decoration:none}footer a:hover{color:#fff}
     var d={name:f.name.value.trim(),email:f.email.value.trim(),type:f.type.value,msg:f.msg.value.trim()};
 
     if(method==='wa'){
-      var text='Hello Softwares.work, I would like to start a project.\n\nName: '+d.name+'\nEmail: '+d.email+'\nProject: '+d.type+'\n\nDetails: '+d.msg;
+      var text='Hello Softwares.work, I would like to start a project.\n\nName: '+d.name+'\nEmail: '+d.email+'\nProject: '+d.type+'\n\nDetails: '+d.msg+'\n\nI understand the terms: 50% deposit to start, 50% after the work is done.';
       window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener');
       toast('Opening WhatsApp with your request ready to send.');
       return;
